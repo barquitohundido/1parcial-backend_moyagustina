@@ -1,0 +1,22 @@
+{
+  "name": "1parcial-backend_AMV",
+  "version": "1.0.0",
+  "description": "1er Examen Backend by Moya Vellio, Agustina",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch ./src/index.ts",
+    "start": "",
+    "build": ""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.4",
+    "mongoose": "^9.10.3"
+  }
+}
