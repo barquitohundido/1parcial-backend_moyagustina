@@ -1,15 +1,17 @@
+import dotenv from "dotenv";
 import mongoose from "mongoose";
 
-export interface IBook {
-  titulo: string;
-  autor: string;
-  fechaPublicacion: number;
+dotenv.config();
+
+async function main() {
+  try {
+    await mongoose.connect(process.env.URI_DB as string);
+    console.log("Conectado a MongoDB con éxito");
+
+    await mongoose.disconnect();
+  } catch (error) {
+    console.error("Error de conexión:", error);
+  }
 }
 
-const bookSchema = new mongoose.Schema<IBook>({
-    titulo: { type: String, required: true },
-    autor: { type: String, required: true },
-    fechaPublicacion: { type: Number, required: true },
-})
-
-export const Book = mongoose.model<IBook>("Book", bookSchema);
+main();
