@@ -11,7 +11,7 @@ const arg5 = process.argv[7] || "0";
 async function main() {
     try {
         await mongoose.connect(process.env.URI_DB);
-        console.log("Conectado a MongoDB con éxito");
+        console.log("Conectado a MongoDB con éxito!⚡");
         if (action === "create") {
             const nuevo = await Book.create({
                 titulo: arg1,
@@ -23,7 +23,7 @@ async function main() {
         }
         else if (action === "read") {
             const libros = await Book.find();
-            console.log("Lista de libros almacenados:", libros);
+            console.log("Lista de libros:", libros);
         }
         else if (action === "update") {
             const actualizado = await Book.findByIdAndUpdate(arg1, { titulo: arg2, autor: arg3, precio: Number(arg4), stock: Number(arg5) }, { new: true });
@@ -36,7 +36,7 @@ async function main() {
         await mongoose.disconnect();
     }
     catch (error) {
-        console.error("Error en la operación:", error);
+        console.error("Error!", error);
     }
 }
 main();
